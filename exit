@@ -1,0 +1,143 @@
+[33mcommit 168da5c050182aa9405286d75f4b1fcfd3ec0936[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;33mtag: v0.23[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Miguel Grinberg <miguel.grinberg@gmail.com>
+Date:   Wed Nov 1 23:43:40 2017 -0700
+
+    Chapter 23: Application Programming Interfaces (APIs) (v0.23)
+
+[33mcommit 4ff2f7a373977823876f992233c35a9e9aa2c63b[m[33m ([m[1;33mtag: v0.22[m[33m)[m
+Author: Miguel Grinberg <miguel.grinberg@gmail.com>
+Date:   Sun Nov 19 23:57:09 2017 -0800
+
+    Chapter 22: Background Jobs (v0.22)
+
+[33mcommit 03b8d41e8e5a43b2c9c0e007d8b6a9dc5b0d92fd[m[33m ([m[1;33mtag: v0.21[m[33m)[m
+Author: Miguel Grinberg <miguel.grinberg@gmail.com>
+Date:   Sun Nov 12 23:53:18 2017 -0800
+
+    Chapter 21: User Notifications (v0.21)
+
+[33mcommit 49420b9b9bd0c8a48735d7005aa32f5dab3f9feb[m[33m ([m[1;33mtag: v0.20[m[33m)[m
+Author: Miguel Grinberg <miguel.grinberg@gmail.com>
+Date:   Thu Nov 9 19:20:27 2017 -0800
+
+    Chapter 20: Some JavaScript Magic (v0.20)
+
+[33mcommit b5fabcb09cb3ebd518b2da8428e733cdef3ed982[m[33m ([m[1;33mtag: v0.19[m[33m)[m
+Author: Miguel Grinberg <miguel.grinberg@gmail.com>
+Date:   Wed Nov 1 13:03:19 2017 -0700
+
+    Chapter 19: Deployment on Docker Containers (v0.19)
+
+[33mcommit c71d4300af4861378204b9e6fd24ce0a83d6f984[m[33m ([m[1;33mtag: v0.18[m[33m)[m
+Author: Miguel Grinberg <miguel.grinberg@gmail.com>
+Date:   Mon Oct 16 22:24:15 2017 -0700
+
+    Chapter 18: Deployment on Heroku (v0.18)
+
+[33mcommit 7a265405218f6d0cd5ee2084cf0d55953b5b22ba[m[33m ([m[1;33mtag: v0.17[m[33m)[m
+Author: Miguel Grinberg <miguel.grinberg@gmail.com>
+Date:   Sat Oct 14 00:03:00 2017 -0700
+
+    Chapter 17: Deployment on Linux (v0.17)
+
+[33mcommit 797dc49bdd47210e19c0299cb9d6310d9bc88d0a[m[33m ([m[1;33mtag: v0.16[m[33m)[m
+Author: Miguel Grinberg <miguel.grinberg@gmail.com>
+Date:   Wed Sep 20 12:51:53 2017 -0700
+
+    Chapter 16: Full-Text Search (v0.16)
+
+[33mcommit c34ab031a1fed7ae4488eff47639da443961c884[m[33m ([m[1;33mtag: v0.15[m[33m)[m
+Author: Miguel Grinberg <miguel.grinberg@gmail.com>
+Date:   Mon Oct 9 00:09:22 2017 -0700
+
+    Chapter 15: A Better Application Structure (v0.15)
+
+[33mcommit 4fc04b6688f81928c2e7dc2f209336ecfaa23cc7[m[33m ([m[1;33mtag: v0.14[m[33m)[m
+Author: Miguel Grinberg <miguel.grinberg@gmail.com>
+Date:   Thu Oct 5 15:34:15 2017 -0700
+
+    Chapter 14: Ajax (v0.14)
+
+[33mcommit 1b3a9a0338ef4897578a735f6fe37e4cc6bf3559[m[33m ([m[1;33mtag: v0.13[m[33m)[m
+Author: Miguel Grinberg <miguel.grinberg@gmail.com>
+Date:   Sat Sep 30 00:21:17 2017 -0700
+
+    Chapter 13: I18n and L10n (v0.13)
+
+[33mcommit a9f46a13cc2e04ab0010ea3b9cfc7b28c29e65e4[m[33m ([m[1;33mtag: v0.12[m[33m)[m
+Author: Miguel Grinberg <miguel.grinberg@gmail.com>
+Date:   Thu Sep 28 22:28:20 2017 -0700
+
+    Chapter 12: Dates and Times (v0.12)
+
+[33mcommit bc66fff6d13199744644a3101254fefaae59a34b[m[33m ([m[1;33mtag: v0.11[m[33m)[m
+Author: Miguel Grinberg <miguel.grinberg@gmail.com>
+Date:   Tue Sep 26 23:43:28 2017 -0700
+
+    Chapter 11: Facelift (v0.11)
+
+[33mcommit 6e7058795b3f764a453e18ee3a8e3f338d3033e9[m[33m ([m[1;33mtag: v0.10[m[33m)[m
+Author: Miguel Grinberg <miguel.grinberg@gmail.com>
+Date:   Tue Sep 26 00:16:46 2017 -0700
+
+    Chapter 10: Email Support (v0.10)
+
+[33mcommit bfe1c2488da950ffda96b982baf85c29256d981f[m[33m ([m[1;33mtag: v0.9[m[33m)[m
+Author: Miguel Grinberg <miguel.grinberg@gmail.com>
+Date:   Sun Sep 17 22:41:40 2017 -0700
+
+    Chapter 9: Pagination (v0.9)
+
+[33mcommit 0d36474fc1f6405d47b75ee44b83b08383734cd4[m[33m ([m[1;33mtag: v0.8[m[33m)[m
+Author: Miguel Grinberg <miguel.grinberg@gmail.com>
+Date:   Sat Sep 16 00:05:17 2017 -0700
+
+    Chapter 8: Followers (v0.8)
+
+[33mcommit 8f43aadd412cd141effccedf1cfe2bff4e0d1f0d[m[33m ([m[1;33mtag: v0.7[m[33m)[m
+Author: Miguel Grinberg <miguel.grinberg@gmail.com>
+Date:   Fri Sep 15 00:03:20 2017 -0700
+
+    Chapter 7: Error Handling (v0.7)
+
+[33mcommit f9ba2d28cf508376ff9e1929c172af6280909c48[m[33m ([m[1;33mtag: v0.6[m[33m)[m
+Author: Miguel Grinberg <miguel.grinberg@gmail.com>
+Date:   Thu Sep 14 10:48:56 2017 -0700
+
+    Chapter 6: Profile Page and Avatars (v0.6)
+
+[33mcommit e7b1227a1cc4e1b2fc0eee1497176c94f145b4cf[m[33m ([m[1;33mtag: v0.5[m[33m)[m
+Author: Miguel Grinberg <miguel.grinberg@gmail.com>
+Date:   Tue Sep 12 23:31:39 2017 -0700
+
+    Chapter 5: User Logins (v0.5)
+
+[33mcommit 68368ea5c5e4b674e7661ef06891c1fb813588c8[m[33m ([m[1;33mtag: v0.4[m[33m)[m
+Author: Miguel Grinberg <miguel.grinberg@gmail.com>
+Date:   Mon Sep 11 14:30:21 2017 -0700
+
+    Chapter 4: Database (v0.4)
+
+[33mcommit 3172e0955c59c8fbeaca6caa8889e1480213ea51[m[33m ([m[1;33mtag: v0.3[m[33m)[m
+Author: Miguel Grinberg <miguel.grinberg@gmail.com>
+Date:   Tue Sep 5 00:04:56 2017 -0700
+
+    Chapter 3: Web Forms (v0.3)
+
+[33mcommit 5d4559227a7f215251ed1dcd15f884443109e153[m[33m ([m[1;33mtag: v0.2[m[33m)[m
+Author: Miguel Grinberg <miguel.grinberg@gmail.com>
+Date:   Mon Sep 4 23:28:11 2017 -0700
+
+    Chapter 2: Templates (v0.2)
+
+[33mcommit 23b3fc85d407f8c68c95efd8a29dd053467708c5[m[33m ([m[1;33mtag: v0.1[m[33m)[m
+Author: Miguel Grinberg <miguel.grinberg@gmail.com>
+Date:   Mon Sep 4 23:23:07 2017 -0700
+
+    Chapter 1: Hello, World! (v0.1)
+
+[33mcommit e308d0d969fcf10ed9f86d5cba99063bb6b384d8[m[33m ([m[1;33mtag: v0.0[m[33m)[m
+Author: Miguel Grinberg <miguel.grinberg@gmail.com>
+Date:   Mon Sep 4 23:22:25 2017 -0700
+
+    Initial commit (v0.0)
