@@ -67,8 +67,7 @@ class User(UserMixin, db.Model):
 	@staticmethod
 	def verify_reset_password_token(token):
 		try:
-			id = jwt.decode(token, app.config['SECRET_KEY'],
-				algorithms['HS256'])['reset_password']
+			id = jwt.decode(token, app.config['SECRET_KEY'], algorithms=['HS256'])['reset_password']
 		except:
 			return
 		return User.query.get(id)
@@ -81,6 +80,7 @@ class Post(db.Model):
 	body = db.Column(db.String(140))
 	timestamp = db.Column(db.DateTime,index=True,default = datetime.utcnow)
 	user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+	language = db.Column(db.String(5))
 
 	def __repr__(self):
 		return "<Post {}>".format(self.body)
