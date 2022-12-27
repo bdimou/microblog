@@ -3,13 +3,17 @@ The routes are the different URLs that the application implements. In Flask, han
 View functions are mapped to one or more routes URLs so that Flask knows what logic to execute when a client requests a given URL.
 """
 
-from flask import render_template, redirect, flash, url_for
-from app import app
-from app.forms import LoginForm
+from flask import render_template, redirect, flash, url_for, request
+from flask_login import current_user, login_user, logout_user, login_required
+from werkzeug.urls import url_parse
+from app import app,db
+from app.forms import LoginForm, RegistrationForm
+from app.models import User
 
 
 @app.route('/')                # A decorator modifies the function that follows it. A common pattern with decorators is to use them to register functions as callbacks for certain events
 @app.route('/index')           # In this case, the @app.route decorator creates an association between the URL given as an argument and the function 
+@login_required
 def index():
     user = {'username':'Miguel'}
     posts = [
@@ -22,14 +26,41 @@ def index():
             'body': 'The Avengers movie was so cool!'
         }
     ]
-    return render_template('index.html',title='Home',user=user,posts=posts) # this will call Jinja2 (template engine) to handle dynamic content placeholders
+    return render_template('index.html',title='Home',posts=posts) # this will call Jinja2 (template engine) to handle dynamic content placeholders
     
 
-@app.route('/login', methods =['GET','POST'])
+@app.route('/login', methods=['GET', 'POST'])
 def login():
+    if current_user.is_authenticated:
+        return redirect(url_for('index'))
     form = LoginForm()
     if form.validate_on_submit():
-        flash('Login requested for user {}, remember_me={}'.format(
-            form.username.data,form.remember_me.data))
+        user = User.query.filter_by(username=form.username.data).first()
+        if user is None or not user.check_password(form.password.data):
+            flash('Invalid username or password')
+            return redirect(url_for('login'))
+        login_user(user, remember=form.remember_me.data)
+        next_page = request.args.get('next')
+        if not next_page or url_parse(next_page).netloc != '':
+            return redirect(url_for('index'))
+        return redirect(next_page)
+    return render_template('login.html', title='Sign In', form=form)
+
+@app.route('/logout')
+def logout():
+    logout_user()
+    return redirect(url_for('index'))
+
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    if current_user.is_authenticated:
         return redirect(url_for('index'))
-    return render_template('login.html',title='Sign In',form=form)
+    form = RegistrationForm()
+    if form.validate_on_submit():
+        user = User(username=form.username.data, email=form.email.data)
+        user.set_password(form.password.data)
+        db.session.add(user)
+        db.session.commit()
+        flash('Congratulations, you are now a registered user!')
+        return redirect(url_for('login'))
+    return render_template('register.html', title='Register', form=form)
