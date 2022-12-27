@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+    <head>
+        {% if title %}
+        <title>{{title}} - Microblog</title> <!--some dynamic content placeholders to be known at runtime -->
+        {% else %}
+        <title> Welcome to Microblog! </title>
+        {% endif %}
+    </head>
+    <body>
+        <div>Microblog: <a href="/index">Home</a></div>
+        <hr>    
+        {% block content %}{% endblock %} <!--control statement to define the place where the derived templates can insert themselves.-->
+    </body>                               <!--blocks are given a unique name, which derived templates can reference when they provide their content.-->  
+</html>
