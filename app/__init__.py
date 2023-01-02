@@ -17,6 +17,8 @@ mail = Mail(app)
 
 
 from app import routes, models,errors
+with app.app_context():
+    db.create_all()
 
 if not app.debug:
     if app.config['MAIL_SERVER']:
@@ -45,3 +47,5 @@ if not app.debug:
 
     app.logger.setLevel(logging.INFO)
     app.logger.info('Microblog startup')
+
+    
