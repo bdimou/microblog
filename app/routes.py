@@ -3,8 +3,9 @@ The routes are the different URLs that the application implements. In Flask, han
 View functions are mapped to one or more routes URLs so that Flask knows what logic to execute when a client requests a given URL.
 """
 
-from flask import render_template, redirect, flash, url_for, request
+from flask import render_template, redirect, flash, url_for, request,g
 from flask_login import current_user, login_user, logout_user, login_required
+from flask_babel import get_locale
 from werkzeug.urls import url_parse
 from datetime import datetime
 from app import app,db
@@ -95,11 +96,6 @@ def edit_profile():
         form.about_me.data = current_user.about_me
     return render_template('edit_profile.html', title='Edit Profile', form=form)
 
-@app.before_request
-def before_request():
-    if current_user.is_authenticated:
-        current_user.last_seen = datetime.utcnow()
-        db.session.commit()
 
 @app.route('/follow/<username>', methods=['POST'])
 @login_required
@@ -177,3 +173,13 @@ def reset_password(token):
         flash('Your password has been reset.')
         return redirect(url_for('login'))
     return render_template('reset_password.html', form=form)
+
+
+@app.before_request
+def before_request():
+    if current_user.is_authenticated:
+        current_user.last_seen = datetime.utcnow()
+        db.session.commit()
+
+    g.locale = str(get_locale())
+
