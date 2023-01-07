@@ -3,7 +3,7 @@ The routes are the different URLs that the application implements. In Flask, han
 View functions are mapped to one or more routes URLs so that Flask knows what logic to execute when a client requests a given URL.
 """
 
-from flask import render_template, redirect, flash, url_for, request,g
+from flask import render_template, redirect, flash, url_for, request,g, jsonify
 from flask_login import current_user, login_user, logout_user, login_required
 from flask_babel import get_locale
 from werkzeug.urls import url_parse
@@ -12,6 +12,8 @@ from app import app,db
 from app.forms import LoginForm, RegistrationForm,EditProfileForm, EmptyForm, PostForm, ResetPasswordRequestForm, ResetPasswordForm
 from app.models import User,Post
 from app.email import send_password_reset_email
+from app.translate import translate
+from langdetect import detect, LangDetectException
 
 
 @app.route('/', methods =['GET','POST'])                # A decorator modifies the function that follows it. A common pattern with decorators is to use them to register functions as callbacks for certain events
@@ -20,7 +22,11 @@ from app.email import send_password_reset_email
 def index():
     form = PostForm()
     if form.validate_on_submit():
-        post = Post(body=form.post.data, author =current_user)
+        try:
+            language = detect(form.post.data) 
+        except LangDetectException:
+            language=''
+        post = Post(body=form.post.data, author=current_user, language = language)
         db.session.add(post)
         db.session.commit()
         flash('Your post is now live!')
@@ -174,6 +180,12 @@ def reset_password(token):
         return redirect(url_for('login'))
     return render_template('reset_password.html', form=form)
 
+@app.route('/translate', methods=['POST'])
+@login_required
+def translate_text():
+    return jsonify({'text': translate(request.form['text'],
+                                      'EN-US' if request.form['source_language']=='en' else request.form['source_language'],
+                                      request.form['dest_language'])})
 
 @app.before_request
 def before_request():
@@ -182,4 +194,6 @@ def before_request():
         db.session.commit()
 
     g.locale = str(get_locale())
+    if g.locale == 'en':
+        g.locale = 'EN-US'
 

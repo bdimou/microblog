@@ -4,11 +4,12 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager
 from flask_mail import Mail, Message
-import logging, os
+import logging, os, deepl
 from logging.handlers import SMTPHandler, RotatingFileHandler
 from flask_bootstrap import Bootstrap
 from flask_moment import Moment
 from flask_babel import Babel, lazy_gettext as _l
+
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -21,6 +22,14 @@ mail = Mail(app)
 boostrap = Bootstrap(app)
 moment = Moment(app)
 babel = Babel(app)
+
+## translator instance ##
+translator = None
+if 'DEEPL_AUTH_KEY' not in app.config or not app.config['DEEPL_AUTH_KEY']:
+    app.logger.info('Error: translation service authorization is not configured.')
+else:
+    translator = deepl.Translator(app.config['DEEPL_AUTH_KEY'])
+##                     ##
 
 
 if not app.debug:
