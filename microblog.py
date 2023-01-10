@@ -3,8 +3,12 @@ to complete the application, you need to have a python script at the top-level t
 Let's call the script <i> microblog.py </i>, and define it as a single line that imports the application instance
 """
 
-from app import app,db,cli
+from app import create_app,db,cli
 from app.models import User,Post
+
+app = create_app()
+cli.register(app)
+
 
 @app.shell_context_processor
 def make_shell_context():

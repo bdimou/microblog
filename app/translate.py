@@ -1,13 +1,15 @@
-
 import deepl,requests
 from flask_babel import _
-from app import app, translator
+from flask import current_app
+
+
 
 def translate(text,source_language,dest_language):
-   
-    if not translator:
+    
+
+    if not current_app.translator:
         return _('Error: the translation service is not configured.')
-    result = translator.translate_text(text,source_lang=source_language,
+    result = current_app.translator.translate_text(text,source_lang=source_language,
     target_lang = dest_language)
 
     if result.text =='':
