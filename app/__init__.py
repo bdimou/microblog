@@ -8,6 +8,7 @@ from flask_bootstrap import Bootstrap
 from flask_moment import Moment
 from flask_babel import Babel, lazy_gettext as _l
 from logging.handlers import SMTPHandler, RotatingFileHandler
+from elasticsearch import Elasticsearch
 from config import Config
 
 
@@ -52,6 +53,19 @@ def create_app(config_class=Config):
     else:
         app.translator = deepl.Translator(app.config['DEEPL_AUTH_KEY'])
     #########################
+
+    ## Elasticsearch instance ##
+
+    app.elasticsearch = Elasticsearch(
+        app.config['ELASTICSEARCH_URL'] if app.config['ELASTICSEARCH_URL'] else None,
+        ca_certs=app.config['ELASTICSEARCH_CERT_PATH'] if app.config['ELASTICSEARCH_CERT_PATH'] else None,
+        basic_auth=(
+            app.config['ELASTICSEARCH_UN'] if app.config['ELASTICSEARCH_UN'] else None,
+            app.config['ELASTICSEARCH_PW'] if app.config['ELASTICSEARCH_PW'] else None
+            )
+    )
+
+    ############################
 
     if not app.debug and not app.testing:
         if app.config['MAIL_SERVER']:
