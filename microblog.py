@@ -4,7 +4,7 @@ Let's call the script <i> microblog.py </i>, and define it as a single line that
 """
 
 from app import create_app,db,cli
-from app.models import User,Post
+from app.models import User,Post,Notification,Message
 
 app = create_app()
 cli.register(app)
@@ -12,7 +12,7 @@ cli.register(app)
 
 @app.shell_context_processor
 def make_shell_context():
-    return {'db':db, 'User':User,'Post':Post}
+    return {'db':db, 'User':User,'Post':Post,'Message':Message, 'Notification':Notification}
 
 # Remember the two app entities? Here you can see both together in the same sentence. The Flask application instance is called app and is a member of the app package. the "from app import app" statement
 # imports the app variable that is a member of the "app" package. If you find this confusing, you can rename either the package or the variable to something else.

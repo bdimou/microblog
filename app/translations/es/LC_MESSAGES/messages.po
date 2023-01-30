@@ -7,76 +7,100 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-01-05 15:57+0000\n"
+"POT-Creation-Date: 2023-01-30 12:31+0000\n"
 "PO-Revision-Date: 2017-09-29 23:25-0700\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
 "Language-Team: es <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.6.0\n"
+"Generated-By: Babel 2.11.0\n"
 
-#: app/__init__.py:18
+#: app/__init__.py:19
 msgid "Please log in to access this page."
 msgstr "Por favor ingrese para acceder a esta página."
 
-#: app/email.py:24
+#: app/translate.py:11
+msgid "Error: the translation service is not configured."
+msgstr ""
+
+#: app/translate.py:16
+msgid "Error: the translation service has failed"
+msgstr ""
+
+#: app/auth/email.py:9
 msgid "[Microblog] Reset Your Password"
 msgstr "[Microblog] Nueva Contraseña"
 
-#: app/forms.py:11 app/forms.py:18 app/forms.py:51
+#: app/auth/forms.py:11 app/auth/forms.py:17 app/main/forms.py:13
 msgid "Username"
 msgstr "Nombre de usuario"
 
-#: app/forms.py:12 app/forms.py:20 app/forms.py:43
+#: app/auth/forms.py:12 app/auth/forms.py:19 app/auth/forms.py:40
 msgid "Password"
 msgstr "Contraseña"
 
-#: app/forms.py:13
+#: app/auth/forms.py:13
 msgid "Remember Me"
 msgstr "Recordarme"
 
-#: app/forms.py:14
+#: app/auth/forms.py:14
 msgid "Sign In"
 msgstr "Ingresar"
 
-#: app/forms.py:19 app/forms.py:38
+#: app/auth/forms.py:18 app/auth/forms.py:36
 msgid "Email"
 msgstr "Email"
 
-#: app/forms.py:22 app/forms.py:45
+#: app/auth/forms.py:21 app/auth/forms.py:42
 msgid "Repeat Password"
 msgstr "Repetir Contraseña"
 
-#: app/forms.py:24
+#: app/auth/forms.py:23
 msgid "Register"
 msgstr "Registrarse"
 
-#: app/forms.py:29 app/forms.py:64
+#: app/auth/forms.py:28 app/main/forms.py:26
 msgid "Please use a different username."
 msgstr "Por favor use un nombre de usuario diferente."
 
-#: app/forms.py:34
+#: app/auth/forms.py:33
 msgid "Please use a different email address."
 msgstr "Por favor use una dirección de email diferente."
 
-#: app/forms.py:39 app/forms.py:47
+#: app/auth/forms.py:37 app/auth/forms.py:44
 msgid "Request Password Reset"
 msgstr "Pedir una nueva contraseña"
 
-#: app/forms.py:52
+#: app/main/forms.py:14
 msgid "About me"
 msgstr "Acerca de mí"
 
-#: app/forms.py:54 app/forms.py:73
+#: app/main/forms.py:16 app/main/forms.py:33 app/main/forms.py:49
 msgid "Submit"
 msgstr "Enviar"
 
-#: app/forms.py:72
+#: app/main/forms.py:32
 msgid "Say something"
 msgstr "Dí algo"
+
+#: app/main/forms.py:36 app/main/routes.py:138
+msgid "Search"
+msgstr ""
+
+#: app/main/forms.py:46
+msgid "Message"
+msgstr ""
+
+#: app/main/routes.py:158
+msgid "Your message has been sent."
+msgstr ""
+
+#: app/main/routes.py:160
+msgid "Send Message"
+msgstr ""
 
 #~ msgid "Search"
 #~ msgstr "Buscar"
