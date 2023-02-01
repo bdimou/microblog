@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-01-30 12:31+0000\n"
+"POT-Creation-Date: 2023-01-31 11:59+0000\n"
 "PO-Revision-Date: 2023-01-05 11:30+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: fr\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.11.0\n"
 
-#: app/__init__.py:19
+#: app/__init__.py:20
 msgid "Please log in to access this page."
 msgstr ""
 
@@ -94,11 +94,19 @@ msgstr ""
 msgid "Message"
 msgstr ""
 
-#: app/main/routes.py:158
+#: app/main/routes.py:159
 msgid "Your message has been sent."
 msgstr ""
 
-#: app/main/routes.py:160
+#: app/main/routes.py:161
 msgid "Send Message"
+msgstr ""
+
+#: app/main/routes.py:193
+msgid "An export task is currently in progress"
+msgstr ""
+
+#: app/main/routes.py:195
+msgid "Exporting posts..."
 msgstr ""
 

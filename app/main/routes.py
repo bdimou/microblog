@@ -120,7 +120,7 @@ def explore():
 @login_required
 def translate_text():
     return jsonify({'text': translate(request.form['text'],
-                                      'EN-US' if request.form['source_language']=='en' else request.form['source_language'],
+                                      request.form['source_language'],
                                       request.form['dest_language'])})
 
 @bp.route('/search')
@@ -185,6 +185,16 @@ def notifications():
         'data':n.get_data(),
         'timestamp':n.timestamp
     } for n in notifications])
+
+@bp.route('/export_posts')
+@login_required
+def export_posts():
+    if current_user.get_task_in_progress('export_posts'):
+        flash(_('An export task is currently in progress'))
+    else:
+        current_user.launch_task('export_posts',_('Exporting posts...'))
+        db.session.commit()
+    return redirect(url_for('main.user',username=current_user.username))
 
 @bp.before_request
 def before_request():

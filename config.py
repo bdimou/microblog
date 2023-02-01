@@ -20,6 +20,7 @@ class Config(object):
     ELASTICSEARCH_UN = os.environ.get('ELASTICSEARCH_UN')
     ELASTICSEARCH_PW = os.environ.get('ELASTICSEARCH_PW')
     ELASTICSEARCH_CERT_PATH = os.environ.get('ELASTICSEARCH_CERT_PATH')
+    REDIS_URL = os.environ.get('REDIS_URL')
 
     MAIL_DEFAULT_SENDER = os.environ.get('MAIL_DEFAULT_SENDER')
     MAIL_SERVER = os.environ.get('MAIL_SERVER')
